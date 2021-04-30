@@ -66,3 +66,18 @@ Data Types
 
 Verbs for formating strings (to use with the "fmt" package)
     https://golang.org/pkg/fmt/
+
+Go Env variables
+
+GOROOT
+    path to the go binaries
+
+GOPATH (path where the application source code resides) (before 1.13)
+    bin
+    pkg
+    src
+        /github.com
+            /tkmagesh77
+                /my-app
+                    
+
