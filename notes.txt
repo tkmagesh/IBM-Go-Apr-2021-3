@@ -1,0 +1,38 @@
+Name
+Experience
+Primary Skillset
+Experience in Golang (if any)
+
+Timings
+Commence : 9:30
+Tea break : 11:00 (20 mins)
+Lunch break : 13:00 (60 mins)
+Tea break : 15:30 (20 mins)
+Wind up : 17:30
+
+Why Golang?
+    Simplicity
+        25 keywords
+        NO classes & Inheritance
+            Only Structs (state) & functions (behavior)
+            Composition over Inheritance
+        Abstractions using Interfaces
+            Implicity implementation of interfaces
+        NO access control modifiers
+        Support of Higher Order Functions
+            functions can be assigned to variables
+            functions can be passed as arguments to other functions
+            functions can be retured as a return value from other function
+
+    Faster execution
+    Faster build creation
+    No support for dynamic libraries
+    Built for concurrency  
+        Language Feature
+            go, chan, select, range
+        Scheduler is built in the runtime
+        1000s of goroutines can be executed using 1 thread
+
+
+go version
+visual studio code (http://code.visualstudio.com) OR goland 
