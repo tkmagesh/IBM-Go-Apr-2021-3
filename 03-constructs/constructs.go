@@ -81,7 +81,13 @@ func main() {
 		fmt.Println("Unknown score")
 	}
 
-	n := 4
+	var n int
+	fmt.Println("Enter any value from 0 to 6:")
+	_, err := fmt.Scanf("%d", &n)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 	switch n {
 	case 0:
 		fmt.Println("is zero")
