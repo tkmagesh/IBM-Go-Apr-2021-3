@@ -33,9 +33,38 @@ func main() {
 		fmt.Println("Hello")
 	}()
 
+	/* fmt.Println(utils.Counter())
 	fmt.Println(utils.Counter())
-	fmt.Println(utils.Counter())
-	fmt.Println(utils.Counter())
+	fmt.Println(utils.Counter()) */
+
+	/*
+		increment, decrement := utils.Spinner()
+		fmt.Println("Incrementing")
+		fmt.Println(increment())
+		fmt.Println(increment())
+		fmt.Println(increment())
+		fmt.Println(increment())
+
+		fmt.Println("Decrementing")
+		fmt.Println(decrement())
+		fmt.Println(decrement())
+		fmt.Println(decrement())
+		fmt.Println(decrement())
+		fmt.Println(decrement())
+	*/
+
+	fmt.Println("Incrementing")
+	fmt.Println(utils.Increment())
+	fmt.Println(utils.Increment())
+	fmt.Println(utils.Increment())
+	fmt.Println(utils.Increment())
+
+	fmt.Println("Decrementing")
+	fmt.Println(utils.Decrement())
+	fmt.Println(utils.Decrement())
+	fmt.Println(utils.Decrement())
+	fmt.Println(utils.Decrement())
+	fmt.Println(utils.Decrement())
 }
 
 func logOperation(operation func(int, int) int) func(int, int) int {
