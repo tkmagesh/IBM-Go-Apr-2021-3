@@ -81,3 +81,7 @@ GOPATH (path where the application source code resides) (before 1.13)
                 /my-app
                     
 
+To create a module file
+    go mod init <module_name>
+
+create a 'math' package with a function IsPrime
