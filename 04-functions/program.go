@@ -5,6 +5,7 @@ import (
 	"func-demos/calculator"
 	gt "func-demos/greeter"
 	"func-demos/math"
+	"func-demos/utils"
 )
 
 func main() {
@@ -22,6 +23,19 @@ func main() {
 	quotient, remainder := calculator.Divide(80, 9)
 	fmt.Printf("Dividing 80 by 9, quotient=%d, remainder=%d\n", quotient, remainder)
 	fmt.Println("Is 83 a prime no? :", math.IsPrime(83))
+
+	hi := func() {
+		fmt.Println("Hi")
+	}
+	hi()
+
+	func() {
+		fmt.Println("Hello")
+	}()
+
+	fmt.Println(utils.Counter())
+	fmt.Println(utils.Counter())
+	fmt.Println(utils.Counter())
 }
 
 func logOperation(operation func(int, int) int) func(int, int) int {
