@@ -68,8 +68,8 @@ func main() {
 		var username, message = "Philip", "Have a nice day!"
 	*/
 	username, message := "Philip", "Have a nice day!"
-
-	fmt.Printf("Hello %s!, %s\n", username, message)
+	greetMsg := fmt.Sprintf("Hello %s!, %s\n", username, message)
+	fmt.Println(greetMsg)
 
 }
 

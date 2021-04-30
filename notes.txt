@@ -36,3 +36,33 @@ Why Golang?
 
 go version
 visual studio code (http://code.visualstudio.com) OR goland 
+
+Data Types
+    bool
+    string
+
+    int
+    int8
+    int16
+    int32
+    int64
+
+    uint
+    uint8
+    uint16
+    uint32
+    uint64
+
+    float32
+    float64
+
+    complex64 (real float32, imaginary float32)
+    complex128 (real float64, imaginary float64)
+
+    byte (alias for uint8)
+    rune (alias as int32) (represents 1 character)
+
+    No implicit type conversion
+
+Verbs for formating strings (to use with the "fmt" package)
+    https://golang.org/pkg/fmt/
