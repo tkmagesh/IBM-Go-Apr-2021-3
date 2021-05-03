@@ -11,13 +11,8 @@ var Counter = func() func() int {
 }()
 
 /*
-var Increment func() int
-var Decrement func() int
-*/
-
-/*
-var Spinner = func() (func() int, func() int) {
-	count := 0
+var Spinner = func(default int) (func() int, func() int) {
+	count := default
 	var increment = func() int {
 		count += 1
 		return count

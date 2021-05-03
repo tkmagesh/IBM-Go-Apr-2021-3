@@ -85,3 +85,11 @@ To create a module file
     go mod init <module_name>
 
 create a 'math' package with a function IsPrime
+
+
+Create a program when executed will display the following menu
+    1. Add
+    2. Subtract
+    3. Multiply
+    4. Divide
+    5. Exit
