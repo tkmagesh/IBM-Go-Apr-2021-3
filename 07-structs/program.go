@@ -24,8 +24,17 @@ func main() {
 	fmt.Println("After applying 10% discount")
 	applyDiscount(&product, 10)
 	fmt.Println(product)
+
+	products := []Product{}
+	addProduct(products, 102, "Pencil", 5, 200, "Stationary")
+	addProduct(products, 103, "Mouse", 400, 10, "Stationary")
+	addProduct(products, 104, "Pan", 500, 5, "Utencil")
+	addProduct(products, 105, "Water Dispenser", 250, 10, "Utencil")
+	fmt.Println(products)
 }
 
 func applyDiscount(product *Product, discount float32) {
 	product.cost = product.cost * 0.9
 }
+
+// create a utility function to add a product to the products slice
