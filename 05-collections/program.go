@@ -83,4 +83,12 @@ func main() {
 		fmt.Println("Chennai doesnot exist")
 	}
 
+	fmt.Println("Adding city chennai with rank 7")
+	addCity(&cityRanks, "Chennai", 7)
+	fmt.Println(cityRanks)
+
+}
+
+func addCity(cityRanks *map[string]int, city string, rank int) {
+	(*cityRanks)[city] = rank
 }
