@@ -12,14 +12,8 @@ func main() {
 	wordOccurancesBySize := map[int][]string{}
 	for _, word := range words {
 		wordSize := len(word)
-		if wordsBySize, wordSizeExists := wordOccurancesBySize[wordSize]; wordSizeExists {
-			wordOccurancesBySize[wordSize] = append(wordsBySize, word)
-		} else {
-			wordOccurancesBySize[wordSize] = []string{}
-			wordOccurancesBySize[wordSize] = append(wordsBySize, word)
-		}
+		wordOccurancesBySize[wordSize] = append(wordOccurancesBySize[wordSize], word)
 	}
-	fmt.Println(wordOccurancesBySize)
 	sizeOfMaxOccurance, maxOccurance := 0, 0
 	for size, words := range wordOccurancesBySize {
 		if len(words) > maxOccurance {
