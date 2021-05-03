@@ -56,4 +56,31 @@ func main() {
 
 	//r := rand.New(40)
 	//r.Intn(100)
+
+	//map
+	cityRanks := map[string]int{
+		"Mysuru":    2,
+		"Mangaluru": 3,
+		"Udupi":     1,
+	}
+	fmt.Printf("City Ranks = %v\n", cityRanks)
+	fmt.Printf("Rank of Mangaluru = %d\n", cityRanks["Mangaluru"])
+
+	fmt.Println("After adding a new city")
+	cityRanks["Bengaluru"] = 5
+	fmt.Printf("City Ranks = %v\n", cityRanks)
+
+	fmt.Println("Iterating through a map")
+	for key, value := range cityRanks {
+		fmt.Printf("Key = %s, Value = %d\n", key, value)
+	}
+
+	fmt.Println("Check if Chennai exists")
+	//cityRanks["Chennai"] = 7
+	if rankOfChennai, exists := cityRanks["Chennai"]; exists {
+		fmt.Println("Rank of Chennai = ", rankOfChennai)
+	} else {
+		fmt.Println("Chennai doesnot exist")
+	}
+
 }
