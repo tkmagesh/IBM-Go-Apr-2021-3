@@ -1,0 +1,4 @@
+"Sit adipisicing deserunt eiusmod mollit ut exercitation. Cupidatat exercitation et incididunt ex dolore irure deserunt reprehenderit id pariatur aliquip velit sit enim. Incididunt sit minim eiusmod excepteur amet commodo cillum fugiat. Consectetur et occaecat cupidatat enim amet laborum. Velit elit dolor velit quis qui non velit cillum pariatur nostrud dolor esse. Voluptate Lorem occaecat cillum ullamco proident magna deserunt. Commodo tempor aliquip veniam cupidatat ex nostrud ipsum nulla Lorem ipsum."
+
+//group the words by their size
+//find out the most occuring size of the string and print the count
