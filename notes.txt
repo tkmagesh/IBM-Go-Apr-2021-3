@@ -93,3 +93,24 @@ Create a program when executed will display the following menu
     3. Multiply
     4. Divide
     5. Exit
+
+
+Collections
+    Array
+        list of values of the same type
+        fixed size
+        apis
+            len()
+
+    Slice (Wrapper for the array)
+        list of values of the same type
+        can be of varying size (immutable)
+        Uses an array internally
+        apis
+            append()
+            len()
+    
+    Map
+        collection of key value pairs (dictionary, hashtable)
+        api
+            delete()
