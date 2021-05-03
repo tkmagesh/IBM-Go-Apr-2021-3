@@ -10,6 +10,18 @@ type Product struct {
 	category string
 }
 
+/*
+type PerishableProduct struct {
+	product Product
+	expiry  int
+}
+*/
+
+type PerishableProduct struct {
+	Product
+	expiry int
+}
+
 func main() {
 	/*
 		product := Product{}
@@ -26,11 +38,34 @@ func main() {
 	fmt.Println(product)
 
 	products := []Product{}
-	addProduct(products, 102, "Pencil", 5, 200, "Stationary")
-	addProduct(products, 103, "Mouse", 400, 10, "Stationary")
-	addProduct(products, 104, "Pan", 500, 5, "Utencil")
-	addProduct(products, 105, "Water Dispenser", 250, 10, "Utencil")
+	addProduct(&products, 102, "Pencil", 5, 200, "Stationary")
+	addProduct(&products, 103, "Mouse", 400, 10, "Stationary")
+	addProduct(&products, 104, "Pan", 500, 5, "Utencil")
+	addProduct(&products, 105, "Water Dispenser", 250, 10, "Utencil")
 	fmt.Println(products)
+
+	fmt.Println("Composition")
+	/*
+		grapes := PerishableProduct{
+			product: Product{200, "Grapes", 120, 20, "Food"},
+			expiry:  3,
+		}
+	*/
+	/* grapes := PerishableProduct{Product{200, "Grapes", 120, 20, "Food"}, 2} */
+	//grapes := PerishableProduct{Product: Product{200, "Grapes", 120, 20, "Food"}, expiry: 2}
+	grapes := newPerishableProduct(200, "Grapes", 120, 20, "Food", 3)
+	fmt.Println(grapes)
+	//fmt.Println("Cost of grapes = ", grapes.Product.cost)
+	fmt.Println("Cost of grapes = ", grapes.cost)
+}
+
+//an utilify function to hide the complexity of constructing a complex struct
+func newPerishableProduct(id int, name string, cost float32, units int, category string, expiry int) *PerishableProduct {
+	return &PerishableProduct{Product{id, name, cost, units, category}, expiry}
+}
+
+func addProduct(products *[]Product, id int, name string, cost float32, units int, category string) {
+	*products = append(*products, Product{id, name, cost, units, category})
 }
 
 func applyDiscount(product *Product, discount float32) {
