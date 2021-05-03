@@ -46,4 +46,14 @@ func main() {
 	fmt.Printf("name[3:] = %v\n", names[3:])
 	fmt.Printf("name[:3] = %v\n", names[:3])
 	fmt.Printf("After the above slice operations, names = %v\n", names)
+
+	//create a new slice with all the values except 1 to 3
+
+	//create a list of 50 random numbers (with range 0 to 200)
+	//print the number of prime numbers generated in the 50 random numbers
+
+	//use the math/rand package - rand.Intn(200)
+
+	//r := rand.New(40)
+	//r.Intn(100)
 }
