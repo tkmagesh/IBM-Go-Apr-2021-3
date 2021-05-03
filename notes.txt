@@ -114,3 +114,19 @@ Collections
         collection of key value pairs (dictionary, hashtable)
         api
             delete()
+
+
+Methods Assignment
+Create a type for a collection of products (Products)
+Implement the following Methods
+    -AddProduct(....)
+
+    -Index() //return the index of the given product
+
+    -Includes() //return true/false depending on the presence of the given product in the Products collection
+
+    -Any() //return true/false depending on any product in the collection matching the given criteria
+
+    -All() //return true/false depending on all the products in the collection matching the given criteria
+    
+    -Filter() // return new Products collection will all the products matching the given criteria
