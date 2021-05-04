@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"methods-demo/models"
-	"sort"
 )
 
 type myStr string
@@ -36,11 +35,11 @@ func main() {
 	fmt.Println(*pp1 == *pp2) */
 
 	products := &models.Products{}
-	products.AddProduct(models.Product{101, "Pen", 10, 100, "Stationary"})
-	products.AddProduct(models.Product{102, "Pencil", 5, 200, "Stationary"})
-	products.AddProduct(models.Product{103, "Mouse", 400, 10, "Stationary"})
+	products.AddProduct(models.Product{105, "Pen", 10, 100, "Stationary"})
+	products.AddProduct(models.Product{103, "Pencil", 5, 200, "Stationary"})
+	products.AddProduct(models.Product{102, "Mouse", 400, 10, "Stationary"})
 	products.AddProduct(models.Product{104, "Pan", 500, 5, "Utencil"})
-	products.AddProduct(models.Product{105, "Water Dispenser", 250, 10, "Utencil"})
+	products.AddProduct(models.Product{101, "Water Dispenser", 250, 10, "Utencil"})
 
 	fmt.Println(products)
 	fmt.Println(products.IndexOf(models.Product{101, "Pen", 10, 100, "Stationary"}))
@@ -70,12 +69,26 @@ func main() {
 
 	//sort by Id
 	fmt.Println("Sort Products by Id")
-	sort.Sort(products)
+	products.Sort("Id")
 	fmt.Println(products)
 
 	//sort by Name
+	fmt.Println("Sort Products by Name")
+	products.Sort("Name")
+	fmt.Println(products)
 
 	//sort by Cost
+	fmt.Println("Sort Products by Cost")
+	products.Sort("Cost")
+	fmt.Println(products)
 
 	//sort by Units
+	fmt.Println("Sort Products by Units")
+	products.Sort("Units")
+	fmt.Println(products)
+
+	//sort by Category
+	fmt.Println("Sort Products by Category")
+	products.Sort("Category")
+	fmt.Println(products)
 }
