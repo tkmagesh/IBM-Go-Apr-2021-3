@@ -1,10 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func fibonacci(count int, ch chan int) {
 	x, y := 0, 1
 	for i := 0; i < count; i++ {
+		time.Sleep(1 * time.Second)
 		ch <- x
 		x, y = y, x+y
 	}
