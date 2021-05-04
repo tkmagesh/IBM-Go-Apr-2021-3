@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"methods-demo/models"
+	"sort"
 )
 
 type myStr string
@@ -69,26 +70,31 @@ func main() {
 
 	//sort by Id
 	fmt.Println("Sort Products by Id")
-	products.Sort("Id")
+	//products.Sort("Id")
+	sort.Sort(products)
 	fmt.Println(products)
 
 	//sort by Name
 	fmt.Println("Sort Products by Name")
-	products.Sort("Name")
+	//products.Sort("Name")
+	sort.Sort(models.ByName{*products})
 	fmt.Println(products)
 
 	//sort by Cost
 	fmt.Println("Sort Products by Cost")
-	products.Sort("Cost")
+	//products.Sort("Cost")
+	sort.Sort(models.ByCost{*products})
 	fmt.Println(products)
 
 	//sort by Units
 	fmt.Println("Sort Products by Units")
-	products.Sort("Units")
+	//products.Sort("Units")
+	sort.Sort(models.ByUnits{*products})
 	fmt.Println(products)
 
 	//sort by Category
 	fmt.Println("Sort Products by Category")
-	products.Sort("Category")
+	//products.Sort("Category")
+	sort.Sort(models.ByCategory{*products})
 	fmt.Println(products)
 }

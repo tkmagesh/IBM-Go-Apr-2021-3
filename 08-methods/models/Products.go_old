@@ -2,6 +2,7 @@ package models
 
 import (
 	"fmt"
+	"sort"
 )
 
 type Products []Product
@@ -63,44 +64,37 @@ func (products Products) Len() int {
 	return len(products)
 }
 
+var currentComparer LessFn = productComparers["Id"]
+
+func (products *Products) Sort(attrName string) {
+	currentComparer = productComparers[attrName]
+	sort.Sort(products)
+}
+
 func (products Products) Less(i, j int) bool {
-	return products[i].Id < products[j].Id
+	return currentComparer((products)[i], (products)[j])
 }
 
 func (products Products) Swap(i, j int) {
 	(products)[i], (products)[j] = (products)[j], (products)[i]
 }
 
-type ByName struct{ Products }
+type LessFn func(p1, p2 Product) bool
 
-func (byName ByName) Less(i, j int) bool {
-	return byName.Products[i].Name < byName.Products[j].Name
+var productComparers map[string]LessFn = map[string]LessFn{
+	"Id": func(p1, p2 Product) bool {
+		return p1.Id < p2.Id
+	},
+	"Name": func(p1, p2 Product) bool {
+		return p1.Name < p2.Name
+	},
+	"Cost": func(p1, p2 Product) bool {
+		return p1.Cost < p2.Cost
+	},
+	"Units": func(p1, p2 Product) bool {
+		return p1.Units < p2.Units
+	},
+	"Category": func(p1, p2 Product) bool {
+		return p1.Category < p2.Category
+	},
 }
-
-type ByUnits struct{ Products }
-
-func (byUnits ByUnits) Less(i, j int) bool {
-	return byUnits.Products[i].Units < byUnits.Products[j].Units
-}
-
-type ByCost struct{ Products }
-
-func (byCost ByCost) Less(i, j int) bool {
-	return byCost.Products[i].Cost < byCost.Products[j].Cost
-}
-
-type ByCategory struct{ Products }
-
-func (byCategory ByCategory) Less(i, j int) bool {
-	return byCategory.Products[i].Category < byCategory.Products[j].Category
-}
-
-/*
-Pinky
-	- a new type has to be created for each comparison
-	+ adheres to Open Closed Principle
-
-Magesh
-	+ a new comparer need to added to the productComparer map
-	- violation of Open Closed Princile
-*/
