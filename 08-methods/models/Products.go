@@ -1,5 +1,7 @@
 package models
 
+import "fmt"
+
 type Products []Product
 
 func (products *Products) AddProduct(product Product) {
@@ -47,10 +49,14 @@ func (products *Products) Filter(predicate func(Product) bool) *Products {
 	return result
 }
 
-func (products *Products) ToString() string {
+func (products Products) String() string {
 	result := ""
-	for _, product := range *products {
-		result += product.ToString() + "\n"
+	for _, product := range products {
+		result += fmt.Sprintf("%v\n", product)
 	}
 	return result
+}
+
+func (products *Products) Sort() {
+	/*  */
 }

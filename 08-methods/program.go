@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"methods-demo/models"
+	"sort"
 )
 
 type myStr string
@@ -12,27 +13,29 @@ func (s myStr) length() int {
 }
 
 func main() {
-	grapes := models.NewProduct(200, "Grapes", 120, 50, "Food", 2)
-	//fmt.Println(grapes)
-	//fmt.Println(models.ToString(grapes))
-	fmt.Println(grapes.ToString())
-	//models.ApplyDiscount(grapes, 10)
-	grapes.ApplyDiscount(10)
-	//fmt.Println(models.ToString(grapes))
-	fmt.Println(grapes.ToString())
+	/*
+		grapes := models.NewProduct(200, "Grapes", 120, 50, "Food", 2)
+		//fmt.Println(grapes)
+		//fmt.Println(models.ToString(grapes))
+		fmt.Println(grapes.ToString())
+		//models.ApplyDiscount(grapes, 10)
+		grapes.ApplyDiscount(10)
+		//fmt.Println(models.ToString(grapes))
+		fmt.Println(grapes.ToString())
 
-	//var test myStr = "Some dummy string"
-	test := myStr("Some dummy string")
-	fmt.Println(test.length())
+		//var test myStr = "Some dummy string"
+		test := myStr("Some dummy string")
+		fmt.Println(test.length())
 
-	var s string = "Some other dummy string"
-	fmt.Println(myStr(s).length())
+		var s string = "Some other dummy string"
+		fmt.Println(myStr(s).length())
+	*/
 
 	/* pp1 := models.NewProduct(200, "Grapes", 120, 50, "Food", 2)
 	pp2 := models.NewProduct(200, "Grapes", 120, 50, "Food", 2)
 	fmt.Println(*pp1 == *pp2) */
 
-	products := models.Products{}
+	products := &models.Products{}
 	products.AddProduct(models.Product{101, "Pen", 10, 100, "Stationary"})
 	products.AddProduct(models.Product{102, "Pencil", 5, 200, "Stationary"})
 	products.AddProduct(models.Product{103, "Mouse", 400, 10, "Stationary"})
@@ -58,5 +61,21 @@ func main() {
 	})
 
 	fmt.Println("Stationary Products :")
-	fmt.Println(stationaryProducts.ToString())
+	fmt.Println(stationaryProducts)
+
+	fmt.Println("Sorting")
+	/* names := []string{"Magesh", "Ramesh", "Ganesh", "Rajesh", "Suresh"}
+	sort.Strings(names)
+	fmt.Println(names) */
+
+	//sort by Id
+	fmt.Println("Sort Products by Id")
+	sort.Sort(products)
+	fmt.Println(products)
+
+	//sort by Name
+
+	//sort by Cost
+
+	//sort by Units
 }

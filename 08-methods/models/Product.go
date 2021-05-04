@@ -27,6 +27,6 @@ func (product *PerishableProduct) ToString() string {
 	return fmt.Sprintf("Id=%d, Name=%s, Cost=%f, Units=%d, Category=%s, Expiry=%d", product.Id, product.Name, product.Cost, product.Units, product.Category, product.Expiry)
 }
 
-func (product *Product) ToString() string {
+func (product Product) String() string {
 	return fmt.Sprintf("Id=%d, Name=%s, Cost=%f, Units=%d, Category=%s", product.Id, product.Name, product.Cost, product.Units, product.Category)
 }
