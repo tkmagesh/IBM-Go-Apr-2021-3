@@ -6,7 +6,8 @@ import (
 )
 
 func main() {
-	tick := time.Tick(1 * time.Second)
+	ticker := time.NewTicker(1 * time.Second)
+	tick := ticker.C
 	stop := time.After(20 * time.Second)
 	for {
 		select {
