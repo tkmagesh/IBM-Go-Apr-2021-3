@@ -136,5 +136,17 @@ IO packages
     os
     io
     io/ioutils
+
+io stream processing - assignment
+    find the sum of even numbers from both the file
+    find the sum of odd numbers from both the file
+    create a result file (result.txt)
+        even = 878
+        odd = 979
+
+    Source - read the file contents, parse it and write them to a channel
+    Splitter - read the data from the 'Source' and write them into one of the two channels based on even/odd condition
+    Sum - read the data from 'Splitter' and aggregate them and write the write the result to another channel
+    Merger - read the data from 'Sum' and write the result into a 'result.txt' file
     
         
