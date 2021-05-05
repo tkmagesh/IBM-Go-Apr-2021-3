@@ -7,7 +7,6 @@ import (
 	models "todo-app/models"
 	routes "todo-app/routes"
 
-	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 )
 
@@ -17,7 +16,7 @@ func main() {
 	config.DB, err = gorm.Open("mysql", config.DbURL(config.BuildConfig()))
 
 	//to configure the release mode
-	gin.SetMode(gin.ReleaseMode)
+	//gin.SetMode(gin.ReleaseMode)
 
 	if err != nil {
 		log.Fatalf("Error connecting to database : %s", err.Error())
