@@ -223,4 +223,6 @@ Tools
 
 To generate proxy and stub
     protoc <proto file> --go_out=plugins=grpc:.
+    ex:
+    protoc proto/calculator.proto --go_out=plugins=grpc:.  
 
