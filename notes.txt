@@ -218,6 +218,9 @@ Schema
 tools for generating proxy and stub (in different languages)
 
 Tools 
-    go get -u google.com.golang.org/grpc
+    go get -u google.golang.org/grpc
     go get -u github.com/golang/protobuf/protoc-gen-go
+
+To generate proxy and stub
+    protoc <proto file> --go_out=plugins=grpc:.
 
