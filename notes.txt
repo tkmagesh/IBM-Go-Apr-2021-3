@@ -149,4 +149,8 @@ io stream processing - assignment
     Sum - read the data from 'Splitter' and aggregate them and write the write the result to another channel
     Merger - read the data from 'Sum' and write the result into a 'result.txt' file
     
-        
+Homework
+    1. Merge the files in the 00-assignment folder
+    2. Break the io-stream-processing into two applications
+        1. reads the files, parse them and send the numbers over tcp to the second application
+        2. will listen for tcp connections and read the data from connections and process them
