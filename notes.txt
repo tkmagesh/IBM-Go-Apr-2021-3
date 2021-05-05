@@ -154,3 +154,70 @@ Homework
     2. Break the io-stream-processing into two applications
         1. reads the files, parse them and send the numbers over tcp to the second application
         2. will listen for tcp connections and read the data from connections and process them
+
+CORBA
+Web
+    TCP/IP
+    HTTP
+        XML
+    JSON
+
+    REST (Respresentational State Transfer)
+        Data is treated as a web resource
+            Address any data using the URL
+                
+                http://myServices.com/Products
+                http://myServices.com/Products/P101
+                http://myServices.com/Products
+                
+                http://myServices.com/Cagtegories
+                http://myServices.com/Cagtegories/Stationary/Products
+            
+            HTTP Verbs as operations
+                GET
+                POST (Insert)
+                PUT (Update)
+                DELETE (Remove)
+                HEAD (exists)
+
+            XML/JSON
+
+Drawbacks of HTTP
+    data in text format
+    Stateless
+    request/response model
+
+SPDY (HTTP2)
+    data in binary format
+    tunnel
+        batch of requests are possible using the same connection
+    sticky connections
+        server push is possible
+
+protobuf
+
+
+Application = collection of microservices
+
+gRPC
+    HTTP2
+        data in binary format
+        tunnel
+        sticky connections
+            server push is possible
+        encryption is by default
+    protobuf
+        efficient way of serializing the data
+    
+
+Schema
+    Request Format
+    Response Format
+    Service Description
+
+tools for generating proxy and stub (in different languages)
+
+Tools 
+    go get -u google.com.golang.org/grpc
+    go get -u github.com/golang/protobuf/protoc-gen-go
+
