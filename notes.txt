@@ -226,3 +226,9 @@ To generate proxy and stub
     ex:
     protoc proto/calculator.proto --go_out=plugins=grpc:.  
 
+
+Troubleshoot generating proto proxy
+    export GOROOT=/usr/local/go
+    export GOPATH=$HOME/go
+    export GOBIN=$GOPATH/bin
+    export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
