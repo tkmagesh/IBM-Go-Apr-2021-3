@@ -130,3 +130,11 @@ Implement the following Methods
     -All() //return true/false depending on all the products in the collection matching the given criteria
     
     -Filter() // return new Products collection will all the products matching the given criteria
+
+
+IO packages
+    os
+    io
+    io/ioutils
+    
+        
