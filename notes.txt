@@ -232,3 +232,10 @@ Troubleshoot generating proto proxy
     export GOPATH=$HOME/go
     export GOBIN=$GOPATH/bin
     export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
+
+To create an image for the grpc-chat app
+    Run the following command in the grpc-chat folder
+        docker build -t grpc-chat-image-name .
+    
+        To create a container instance run the following command
+            docker run -p 8080:8080 grpc-chat-image-name
